@@ -19,6 +19,10 @@ git clone the project from the corrent URL
 ```
 
 Firstly, open the server: rosrun ros_dynamic_test dyn_server
-Then, open the client: 
+
+
+
+Then, open the client:
+
 rosrun ros_dynamic_test dyn_client or rosrun ros_dynamic_test dynamic_client.py
 
