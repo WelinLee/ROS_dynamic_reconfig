@@ -1,11 +1,24 @@
 ## Author
-- **Welin**  2018.02.23
+- **Welin**  2018.03.10
 
 ## Description
-In this project, three approaches are provided to implement ROS&Qt GUI.
-In the test_gui folder, it just modified the example in catkin_create_qt_pkgdepending on qt_build.
-In the rqt_mypkg folder, it is the C++ rqt_plugin test depending on rqt_gui_cpp.
-In the qt_ros_test, it combines ROS with Qt library.
+In this project, it provides how to build server and client in ros dynamic reconguration.
+In the script folder, the client is written in python.
 
 ## TODO
+```sh
+    $ $ mkdir -p catkin_ws/src
+    $ cd catkin_ws/src
+```
+git clone the project from the corrent URL
+
+```
+    $ cd ..
+    $ catkin_make
+    $ source devel/setup.bash
+```
+
+Firstly, open the server: rosrun ros_dynamic_test dyn_server
+Then, open the client: 
+rosrun ros_dynamic_test dyn_client or rosrun ros_dynamic_test dynamic_client.py
 
