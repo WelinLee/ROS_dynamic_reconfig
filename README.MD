@@ -7,7 +7,7 @@ In the script folder, the client is written in python.
 
 ## TODO
 ```sh
-    $ $ mkdir -p catkin_ws/src
+    $ mkdir -p catkin_ws/src
     $ cd catkin_ws/src
 ```
 git clone the project from the corrent URL
