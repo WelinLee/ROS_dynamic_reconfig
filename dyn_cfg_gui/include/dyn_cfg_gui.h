@@ -64,7 +64,6 @@ private:
     bool isSelectedNode__;
     RosThread *m_rosthread;
     QMap<QString, ParamWidget*> m_paramMap;
-    bool m_isEtx;
 };
 
 #endif // DYNRECFGWIDGET_H

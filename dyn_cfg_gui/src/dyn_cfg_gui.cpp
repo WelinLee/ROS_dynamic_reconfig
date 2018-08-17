@@ -47,7 +47,7 @@ DynRecfgWidget::~DynRecfgWidget()
 void DynRecfgWidget::ros_init(int argc, char **argv)
 {
     ros::init(argc, argv, "DynRecfgGui");
-    selected_node__ = ""; nodelist__.clear(); isSelectedNode__ = false; m_isEtx = false;
+    selected_node__ = ""; nodelist__.clear(); isSelectedNode__ = false;
     m_rosthread = new RosThread;
     connect(m_rosthread, SIGNAL(signal_recfg_msg(QString, RecfgMsgVal)),
             this, SLOT(slot_addparamui(QString, RecfgMsgVal)));

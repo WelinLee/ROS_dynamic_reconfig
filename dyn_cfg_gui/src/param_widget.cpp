@@ -22,8 +22,8 @@ ParamWidget::ParamWidget(QString title, QWidget *parent)
 {
     m_vLayout = new QVBoxLayout;
     QHBoxLayout *hLayout = new QHBoxLayout;
-    m_loadbtn = new QPushButton(QIcon(QString(":/images/open.png")), "");
     m_savebtn = new QPushButton(QIcon(QString(":/images/save.png")), "");
+    m_loadbtn = new QPushButton(QIcon(QString(":/images/open.png")), "");
     m_closebtn = new QToolButton();
     m_closebtn->setIcon(QIcon(QString(":/images/close.png")));
 
@@ -49,6 +49,7 @@ ParamWidget::ParamWidget(QString title, QWidget *parent)
     QObject::connect(m_closebtn, SIGNAL(clicked()), this, SLOT(slot_btn_close()));
 
     m_nodename = title;
+    m_widgetLS.clear();
 }
 
 ParamWidget::~ParamWidget()
