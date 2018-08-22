@@ -18,7 +18,7 @@
 ** Implementation [ParamWidget]
 *****************************************************************************/
 ParamWidget::ParamWidget(QString title, QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent), m_nodename(title)
 {
     m_vLayout = new QVBoxLayout;
     QHBoxLayout *hLayout = new QHBoxLayout;
@@ -32,7 +32,7 @@ ParamWidget::ParamWidget(QString title, QWidget *parent)
     font.setUnderline(true);
     font.setBold(true);
     label->setFont(font);
-    label->setText(title);
+    label->setText(title.remove("/parameter_updates"));
 
     hLayout->addWidget(m_savebtn);
     hLayout->addWidget(m_loadbtn);
@@ -48,7 +48,6 @@ ParamWidget::ParamWidget(QString title, QWidget *parent)
     QObject::connect(m_loadbtn, SIGNAL(clicked()), this, SLOT(slot_btn_load()));
     QObject::connect(m_closebtn, SIGNAL(clicked()), this, SLOT(slot_btn_close()));
 
-    m_nodename = title;
     m_widgetLS.clear();
 }
 

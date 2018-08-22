@@ -9,7 +9,7 @@
 #include <ros/ros.h>
 #include <dynamic_reconfigure/Config.h>
 
-typedef dynamic_reconfigure::ConfigConstPtr RecfgMsgVal;
+typedef dynamic_reconfigure::Config::ConstPtr RecfgMsgVal;
 
 class RosThread : public QObject
 {
@@ -27,7 +27,8 @@ signals:
 
 private:
     void rosrunThread();
-    void subRecfgCallBack(const ros::MessageEvent<const dynamic_reconfigure::Config> &event);
+    //void subRecfgCallBack(const ros::MessageEvent<const dynamic_reconfigure::Config> &event);
+    void subRecfgCallBack(const dynamic_reconfigure::Config::ConstPtr &msg, std::string srvname);
 
 private:
     ros::NodeHandle *n_;

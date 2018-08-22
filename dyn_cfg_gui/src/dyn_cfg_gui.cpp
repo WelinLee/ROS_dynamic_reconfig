@@ -141,7 +141,7 @@ void DynRecfgWidget::slot_btn_expand()
 
 void DynRecfgWidget::slot_removenode(QString name)
 {
-    m_rosthread->shutServicesUpdate(name.toStdString()+"/parameter_updates");
+    m_rosthread->shutServicesUpdate(name.toStdString());
     m_paramMap.remove(name);
 
     nodelist__.removeOne(name);
@@ -154,9 +154,9 @@ void DynRecfgWidget::slot_addparamui(const QString &topicname, const RecfgMsgVal
     QString srvname = topicname;
     if(!m_paramMap.contains(srvname))
     {
-      m_paramMap[srvname] = new ParamWidget(srvname);
-      QObject::connect(m_paramMap[srvname] , SIGNAL(signal_removenode(QString)), this, SLOT(slot_removenode(QString)));
-      ui.verticalLayout->addWidget(m_paramMap[srvname]);
+        m_paramMap[srvname] = new ParamWidget(srvname);
+        QObject::connect(m_paramMap[srvname] , SIGNAL(signal_removenode(QString)), this, SLOT(slot_removenode(QString)));
+        ui.verticalLayout->addWidget(m_paramMap[srvname]);
     }
     else
     {
